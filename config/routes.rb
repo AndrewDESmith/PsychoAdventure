@@ -29,7 +29,19 @@ Rails.application.routes.draw do
 
   get 'notebooks/destroy'
 
+  get 'scenes/index'
+
   get 'scenes/show'
+
+  get 'scenes/new'
+
+  get 'scenes/create'
+
+  get 'scenes/edit'
+
+  get 'scenes/update'
+
+  get 'scenes/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
