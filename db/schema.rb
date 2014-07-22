@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721210743) do
+ActiveRecord::Schema.define(version: 20140722170009) do
 
   create_table "choices", force: true do |t|
     t.integer  "player_choice"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20140721210743) do
   end
 
   create_table "notebooks", force: true do |t|
-    t.text     "user_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "user_note"
   end
 
   create_table "responses", force: true do |t|
