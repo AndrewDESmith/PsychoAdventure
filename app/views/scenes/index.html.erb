@@ -1,1 +1,11 @@
-index.html.erb
+<h1>Admin:  All Current Scenes</h1>
+
+<% @scenes.each do |scene| %>
+	<p><%= scene.date %><br />
+	<%= scene.time %><br />
+	<%= scene.location %><br />
+	<%= scene.story_text %><br />
+	<%= link_to "Edit or Delete this scene.", "scenes/#{scene.id}" %></p>
+<% end %>
+
+<p><%= link_to "Create a new scene", "scenes/new" %></p>
