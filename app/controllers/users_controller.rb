@@ -1,19 +1,22 @@
 class UsersController < ApplicationController
+skip_before_filter :require_login, only: [:index, :new, :create]
+  
   def new
+    @user = User.new
   end
 
   def create
+    @user = User.new
+    if @user.save
+      auto_login(@user)
+      redirect_to scenes_url, :notice => "Successfully signed up!"
+    else
+      render "new"
+    end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  private
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
